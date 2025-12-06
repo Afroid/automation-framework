@@ -13,8 +13,14 @@ public class TestConfig {
     }
 
     public static boolean isHeadless() {
-        // Run browser in headless mode by default (good for CI)
+        // Run browser in headless mode by default, which makes things easier for CI
         return Boolean.parseBoolean(System.getProperty("headless", "true"));
+    }
+
+    // Top-level browser selection
+    public static String getBrowser() {
+        // Chrome | Firefox | Edge
+        return System.getProperty("browser", "chrome").toLowerCase();
     }
 
     public static int getDefaultTimeoutSeconds() {
@@ -22,6 +28,6 @@ public class TestConfig {
     }
 
     private TestConfig() {
-        // prevent instantiation
+        // this prevents instantiation
     }
 }

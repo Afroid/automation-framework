@@ -10,7 +10,7 @@ public abstract class UiTestBase {
 
     @BeforeEach
     public void setUpWebDriver() {
-        driver = WebDriverFactory.createChromeDriver();
+        driver = WebDriverFactory.createWebDriver();
         driver.manage().window().maximize();
     }
 
